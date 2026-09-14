@@ -342,11 +342,7 @@
   }
 
   /* ---------- CONTACT ---------- */
-  .contact{
-    display:grid;
-    grid-template-columns: 260px 1fr;
-    gap:40px;
-  }
+  .contact-section{ padding:100px 0; }
   .contact-details{
     display:flex; flex-direction:column; gap:22px;
   }
@@ -362,17 +358,19 @@
   }
   .contact-row a.value:hover{ color:var(--wine); }
   .social-row{
-    display:flex; gap:18px; margin-top:8px;
+    display:flex; gap:12px; margin-top:6px; flex-wrap:wrap;
   }
   .social-row a{
-    font-size:0.95rem;
-    border-bottom:1px solid var(--line);
-    padding-bottom:2px;
+    font-size:0.9rem;
+    padding:10px 20px;
+    border:1px solid var(--ink);
+    border-radius:2px;
+    transition:background 0.2s ease, color 0.2s ease;
   }
-  .social-row a:hover{ border-color:var(--wine); color:var(--wine); }
+  .social-row a:hover{ background:var(--ink); color:var(--ivory); }
 
-  @media (max-width:760px){
-    .contact{ grid-template-columns:1fr; }
+  @media (max-width:720px){
+    .contact-section{ padding:64px 0; }
   }
 
   footer{
@@ -532,15 +530,15 @@
       <a class="platform-link" href="https://open.spotify.com/artist/2sZypatMxEN64fxXyUaGIX" target="_blank" rel="noopener">Spotify</a>
       <a class="platform-link" href="https://music.apple.com/us/artist/glo-israel/6794387763" target="_blank" rel="noopener">Apple Music</a>
       <a class="platform-link" href="https://music.amazon.com/artists/B0BV4PYFP4/glo-israel" target="_blank" rel="noopener">Amazon Music</a>
-      <a class="platform-link" href="https://www.instagram.com/glofaithwowisdead/" target="_blank" rel="noopener">Instagram</a>
-      <a class="platform-link" href="https://www.tiktok.com/@glorethawhite" target="_blank" rel="noopener">TikTok</a>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact" style="padding-top:100px; padding-bottom:100px;">
-  <div class="wrap" style="display:grid; grid-template-columns:260px 1fr; gap:40px;">
-    <h2>Booking &amp; press</h2>
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:32px;">
+      <h2>Booking &amp; press</h2>
+    </div>
     <div class="contact-details">
       <div class="contact-row">
         <span class="label">Email</span>
