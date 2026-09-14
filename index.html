@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glo — Truth Music</title>
+<meta name="description" content="Glo (Gloretha Brown) — gospel artist and Youth Choir Director. Electronic press kit for Truth Music.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF5EC;
+    --sand:#EFE6D6;
+    --ink:#241C18;
+    --wine:#6E1E29;
+    --wine-deep:#4A141C;
+    --gold:#A97D2F;
+    --gold-soft:#C9A45C;
+    --rose:#C98A93;
+    --line: rgba(36,28,24,0.14);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3, .serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,245,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:20px; padding-bottom:20px;
+  }
+  .brandmark{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .navlinks{
+    display:flex;
+    gap:36px;
+    font-size:0.92rem;
+    color:var(--ink);
+  }
+  .navlinks a{
+    position:relative;
+    padding-bottom:4px;
+    opacity:0.75;
+    transition:opacity 0.2s ease;
+  }
+  .navlinks a:hover{opacity:1;}
+
+  @media (max-width:720px){
+    .navlinks{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items:stretch;
+  }
+  .hero-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px 56px 80px 40px;
+    max-width:640px;
+  }
+  .hero-verse{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.7rem, 3.1vw, 2.5rem);
+    line-height:1.32;
+    color:var(--wine-deep);
+  }
+  .hero-verse .cite{
+    display:block;
+    font-style:normal;
+    font-size:1rem;
+    color:var(--gold);
+    margin-top:14px;
+    letter-spacing:0.02em;
+  }
+  .hero-rule{
+    width:64px; height:2px;
+    background:var(--gold-soft);
+    margin:34px 0 28px;
+  }
+  .hero-name{
+    font-size:clamp(3.2rem, 7vw, 5.2rem);
+    line-height:0.95;
+  }
+  .hero-sub{
+    margin-top:10px;
+    font-family:'Work Sans', sans-serif;
+    font-size:1.02rem;
+    color:var(--ink);
+    opacity:0.75;
+    max-width:420px;
+  }
+  .hero-sub em{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--wine);
+  }
+  .hero-cta{
+    margin-top:38px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 28px;
+    font-size:0.92rem;
+    border-radius:2px;
+    border:1px solid var(--ink);
+    transition:background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .btn-solid{
+    background:var(--wine);
+    border-color:var(--wine);
+    color:var(--ivory);
+  }
+  .btn-solid:hover{ background:var(--wine-deep); border-color:var(--wine-deep); }
+  .btn-outline:hover{ background:var(--ink); color:var(--ivory); }
+
+  .hero-image{
+    position:relative;
+    background: linear-gradient(180deg, var(--sand) 0%, var(--rose) 140%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:56px;
+  }
+  .hero-frame{
+    width:100%;
+    max-width:460px;
+    background:var(--ivory);
+    border:1px solid rgba(169,125,47,0.35);
+    padding:18px;
+  }
+  .hero-frame-inner{
+    border:1px solid rgba(36,28,24,0.1);
+    overflow:hidden;
+  }
+  .hero-frame img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  @media (max-width:900px){
+    .hero{ grid-template-columns: 1fr; min-height:auto; }
+    .hero-text{ padding:64px 28px 40px; max-width:none; order:2;}
+    .hero-image{ order:1; padding:40px 28px; }
+    .hero-frame{ max-width:360px; }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{ padding:100px 0; }
+  .section-head{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    gap:40px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(2.1rem, 4vw, 2.8rem);
+    line-height:1.05;
+  }
+  .section-head p{
+    max-width:520px;
+    opacity:0.8;
+    font-size:0.98rem;
+    padding-top:10px;
+  }
+  @media (max-width:760px){
+    .section-head{ grid-template-columns:1fr; gap:16px; }
+  }
+
+  /* ---------- BIO ---------- */
+  .bio{ background:var(--sand); }
+  .bio-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap:64px;
+    align-items:start;
+  }
+  .bio-photo{
+    border-radius:2px;
+    overflow:hidden;
+    background:var(--ivory);
+  }
+  .bio-photo img{ width:100%; height:auto; }
+  .bio-copy p{ margin-bottom:18px; font-size:1.02rem; max-width:60ch;}
+  .bio-copy .closer{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--wine);
+    font-size:1.2rem;
+    margin-top:24px;
+  }
+  @media (max-width:840px){
+    .bio-grid{ grid-template-columns:1fr; gap:36px; }
+  }
+
+  /* ---------- MUSIC ---------- */
+  .music-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .track{
+    display:grid;
+    grid-template-columns: 110px 1fr auto;
+    gap:32px;
+    align-items:center;
+    padding:32px 0;
+    border-top:1px solid var(--line);
+  }
+  .track:last-child{ border-bottom:1px solid var(--line); }
+  .track-cover{
+    width:110px; height:110px;
+    border-radius:2px;
+    overflow:hidden;
+    background:var(--sand);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .track-cover img{ width:100%; height:100%; object-fit:cover; }
+  .track-cover.placeholder{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:0.95rem;
+    text-align:center;
+    padding:10px;
+  }
+  .track-info h3{
+    font-size:1.6rem;
+    margin-bottom:4px;
+  }
+  .track-info .verse-ref{
+    font-size:0.85rem;
+    color:var(--wine);
+    margin-bottom:10px;
+    font-style:italic;
+  }
+  .track-info p{
+    font-size:0.95rem;
+    opacity:0.8;
+    max-width:56ch;
+  }
+  .track-meta{
+    text-align:right;
+    font-size:0.85rem;
+    opacity:0.7;
+    white-space:nowrap;
+  }
+  .track-meta .date{
+    color:var(--ink);
+    font-weight:500;
+    opacity:1;
+    margin-bottom:4px;
+  }
+  @media (max-width:720px){
+    .track{ grid-template-columns: 80px 1fr; }
+    .track-cover{ width:80px; height:80px; }
+    .track-meta{ grid-column: 1 / -1; text-align:left; padding-top:8px; }
+  }
+
+  .ep-note{
+    margin-top:40px;
+    padding:24px 28px;
+    border-left:3px solid var(--gold-soft);
+    background:var(--sand);
+    font-size:0.95rem;
+  }
+  .ep-note .serif{ font-size:1.1rem; font-style:italic; color:var(--wine); }
+
+  /* ---------- LISTEN (dark band) ---------- */
+  .listen{
+    background:var(--ink);
+    color:var(--ivory);
+  }
+  .listen .section-head h2{ color:var(--ivory); }
+  .listen .section-head p{ color:var(--ivory); opacity:0.65; }
+  .listen-embed{
+    border-radius:4px;
+    overflow:hidden;
+    margin-bottom:44px;
+    border:1px solid rgba(255,255,255,0.12);
+  }
+  .platform-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .platform-link{
+    padding:14px 26px;
+    border:1px solid rgba(255,255,255,0.28);
+    border-radius:2px;
+    font-size:0.92rem;
+    transition:border-color 0.2s ease, background 0.2s ease;
+  }
+  .platform-link:hover{
+    border-color:var(--gold-soft);
+    background:rgba(201,164,92,0.1);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    gap:40px;
+  }
+  .contact-details{
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .contact-row{
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .contact-row .label{
+    font-size:0.82rem;
+    opacity:0.6;
+  }
+  .contact-row .value{
+    font-size:1.1rem;
+  }
+  .contact-row a.value:hover{ color:var(--wine); }
+  .social-row{
+    display:flex; gap:18px; margin-top:8px;
+  }
+  .social-row a{
+    font-size:0.95rem;
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+  }
+  .social-row a:hover{ border-color:var(--wine); color:var(--wine); }
+
+  @media (max-width:760px){
+    .contact{ grid-template-columns:1fr; }
+  }
+
+  footer{
+    background:var(--wine-deep);
+    color:var(--ivory);
+    padding:56px 0 40px;
+    text-align:center;
+  }
+  footer .serif{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--gold-soft);
+    display:block;
+    margin-bottom:14px;
+  }
+  footer .fine{
+    font-size:0.82rem;
+    opacity:0.55;
+    margin-top:20px;
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brandmark">Glo</div>
+    <div class="navlinks">
+      <a href="#bio">Bio</a>
+      <a href="#music">Music</a>
+      <a href="#listen">Listen</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-text">
+    <p class="hero-verse">
+      "For mine house shall be called an house of prayer for all people."
+      <span class="cite">Isaiah 56:7</span>
+    </p>
+    <div class="hero-rule"></div>
+    <h1 class="hero-name">Glo</h1>
+    <p class="hero-sub"><em>Truth Music</em> — putting God's Word to music, so it can be heard, learned, remembered, and sung.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#listen">Listen now</a>
+      <a class="btn btn-outline" href="#contact">Booking &amp; press</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-frame">
+      <div class="hero-frame-inner">
+        <img src="images/standing_with_bible.png" alt="Glo, gospel artist, holding a Bible">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bio" id="bio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Her story</h2>
+      <p>A St. Louis native, choir director, and gospel artist putting Scripture to song for Dallas and beyond.</p>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-photo">
+        <img src="images/epk_header_image_trrans.png" alt="Portrait of Glo">
+      </div>
+      <div class="bio-copy">
+        <p>Gloretha Brown, affectionately known as Glo, is a St. Louis, Missouri native, gospel artist, and Youth Choir Director serving in Dallas, Texas. Her life and music are rooted in serving the true and living God, Jesus Christ, living according to His Word, and studying to show herself approved unto God.</p>
+        <p>Glo believes faith without works is dead, and that God-given talents should be used for His purpose. Through Truth Music, her mission is to put God's Word to music, allowing people to hear, learn, remember, and sing the Scriptures.</p>
+        <p>In September 2026, Glo released three Scripture-based singles: "Psalm 150 – Praise the Lord," "Teach Me," inspired by Psalm 119:35, and "I'm a Winner," inspired by Proverbs 31. Her EP follows on October 31, 2026.</p>
+        <p>For Glo, this ministry isn't about recognition — it's about using what God has given her to help plant His Word through music and lift up the name of Jesus Christ. Her prayer is that Truth Music finds an audience open to hearing, learning, and singing the Scriptures, giving God's Word another avenue to reach hearts.</p>
+        <p class="closer">Her prayer is to one day hear, "Well done, thou good and faithful servant." — Matthew 25:21</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="music" id="music">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The singles</h2>
+      <p>Three Scripture-based releases, each built from a passage Glo lives by.</p>
+    </div>
+
+    <div class="music-list">
+
+      <div class="track">
+        <div class="track-cover">
+          <img src="images/Psalm_150_Cover.jpg" alt="Psalm 150 – Praise the Lord cover art">
+        </div>
+        <div class="track-info">
+          <h3>Psalm 150 – Praise the Lord</h3>
+          <div class="verse-ref">Psalm 150</div>
+          <p>Inspired directly by Psalm 150, encouraging listeners to praise the true and living God, Jesus Christ. Video release September 25, 2026.</p>
+        </div>
+        <div class="track-meta">
+          <div class="date">Sept 11, 2026</div>
+          <div>ISRC QT6FH2644089</div>
+        </div>
+      </div>
+
+      <div class="track">
+        <div class="track-cover">
+          <img src="images/Teach_Me_Cover.jpg" alt="Teach Me cover art"></div>
+        <div class="track-info">
+          <h3>Teach Me</h3>
+          <div class="verse-ref">Psalm 119:35</div>
+          <p>A prayer for God's wisdom, guidance, and instruction.</p>
+        </div>
+        <div class="track-meta">
+          <div class="date">Sept 18, 2026</div>
+          <div>ISRC QT6G92626819</div>
+        </div>
+      </div>
+
+      <div class="track">
+        <div class="track-cover">
+          <img src="images/I_m_A_Winner_Cover.jpg" alt="I'm a Winner cover art">
+        </div>
+        <div class="track-info">
+          <h3>I'm a Winner</h3>
+          <div class="verse-ref">Proverbs 31</div>
+          <p>An uplifting declaration of faith, victory, and confidence in God.</p>
+        </div>
+        <div class="track-meta">
+          <div class="date">Sept 25, 2026</div>
+          <div>ISRC QT6G92666054</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ep-note">
+      <span class="serif">Truth Music, the EP</span>
+      <p style="margin-top:8px;">All three singles arrive together on a full EP, releasing October 31, 2026.</p>
+    </div>
+  </div>
+</section>
+
+<section class="listen" id="listen">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where to listen</h2>
+      <p>Stream Truth Music on every major platform, and follow along for new releases.</p>
+    </div>
+
+    <div class="listen-embed">
+      <iframe style="border:0; display:block;" src="https://open.spotify.com/embed/artist/2sZypatMxEN64fxXyUaGIX?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Glo on Spotify"></iframe>
+    </div>
+
+    <div class="platform-row">
+      <a class="platform-link" href="https://open.spotify.com/artist/2sZypatMxEN64fxXyUaGIX" target="_blank" rel="noopener">Spotify</a>
+      <a class="platform-link" href="https://music.apple.com/us/artist/glo-israel/6794387763" target="_blank" rel="noopener">Apple Music</a>
+      <a class="platform-link" href="https://music.amazon.com/artists/B0BV4PYFP4/glo-israel" target="_blank" rel="noopener">Amazon Music</a>
+      <a class="platform-link" href="https://www.instagram.com/glofaithwowisdead/" target="_blank" rel="noopener">Instagram</a>
+      <a class="platform-link" href="https://www.tiktok.com/@glorethawhite" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="padding-top:100px; padding-bottom:100px;">
+  <div class="wrap" style="display:grid; grid-template-columns:260px 1fr; gap:40px;">
+    <h2>Booking &amp; press</h2>
+    <div class="contact-details">
+      <div class="contact-row">
+        <span class="label">Email</span>
+        <a class="value" href="mailto:glofaithwowisdead@gmail.com">glofaithwowisdead@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Based in</span>
+        <span class="value">Dallas, Texas — St. Louis, Missouri native</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">Genre</span>
+        <span class="value">Gospel / Christian — clean, radio-ready</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">Label</span>
+        <span class="value">Glofro LLC</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">Follow</span>
+        <div class="social-row">
+          <a href="https://www.instagram.com/glofaithwowisdead/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@glorethawhite" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="serif">God's Word. God's music. God's glory.</span>
+    <div class="fine">© 2026 Glo / Glofro LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
