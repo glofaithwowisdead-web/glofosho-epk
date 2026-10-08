@@ -7,17 +7,20 @@
 <div class="card"><h3>Outreach</h3><div class="tag">Evangelism, fundraisers, and charity events</div><p>Events that serve others and share the Gospel. Glo reviews each outreach request based on availability and the nature of the event.</p><button class="btn btn-gold pick" data-t="out">Select outreach</button></div></div>
 <div id="panel" class="note" hidden tabindex="-1"><h3 id="pt" style="font-size:1.7rem;margin-bottom:8px"></h3><p id="pf" style="margin-bottom:10px"></p><p id="pp" style="margin-bottom:10px;opacity:.85"></p>
 <ol style="margin:0 0 14px 20px"><li>Fill out the booking form.</li><li id="s2"></li></ol>
-<p style="margin-bottom:18px"><b id="pb"></b></p><a class="btn btn-gold" id="pg" href="https://docs.google.com/forms/d/e/1FAIpQLSfS5vH1e0OJdvw7FCkSH2ivkaYK644tu9iFiYW5unPfwTRWpA/viewform" target="_blank" rel="noopener">Open the booking form</a></div>
-<style>.card.on{box-shadow:0 0 0 2px var(--gold)}#panel[hidden]{display:none}#panel h3{font-family:'Cormorant Garamond',serif;font-weight:500}</style>
+<p style="margin-bottom:18px"><b id="pb"></b></p><a class="btn btn-gold" id="pg" href="https://docs.google.com/forms/d/e/1FAIpQLSfS5vH1e0OJdvw7FCkSH2ivkaYK644tu9iFiYW5unPfwTRWpA/viewform" target="_blank" rel="noopener">Step 1: Open the booking form</a>
+<div style="margin-top:24px"><label style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;cursor:pointer"><input type="checkbox" id="done" style="margin-top:5px"><span>I have submitted the booking form.</span></label>
+<a class="btn btn-gold" id="pay" href="#" target="_blank" rel="noopener" aria-disabled="true">Step 2: Continue to payment</a></div></div>
+<style>#pay[aria-disabled=true]{opacity:.35;pointer-events:none}.card.on{box-shadow:0 0 0 2px var(--gold)}#panel[hidden]{display:none}#panel h3{font-family:'Cormorant Garamond',serif;font-weight:500}</style>
 <script>
 /* EDIT FEES HERE. Wording shown only after a visitor picks an event type. */
 var T={
-perf:{t:'Performance booking',f:'Performance bookings start at $300.',p:'Travel and lodging, a full band, long distance, or longer sets may raise the quote. Card payments include a small processing fee, shown in full before you pay.',s:'Return to pay your booking fee and receive your itemized receipt.',b:'Your booking is not complete until you submit the form and receive your receipt.'},
-church:{t:'Church booking',f:'Church bookings are $150.',p:'Card payments include a small processing fee, shown in full before you pay.',s:'Return to pay your booking fee and receive your itemized receipt.',b:'Your booking is not complete until you submit the form and receive your receipt.'},
-out:{t:'Outreach request',f:'Glo reviews every outreach request individually.',p:'After you submit the form, she will follow up with your next steps.',s:'Glo reviews your request and contacts you.',b:'Your request is not complete until you submit the form.'}};
+perf:{l:'https://square.link/u/2TjIFT2i',t:'Performance booking',f:'Performance bookings start at $300.',p:'Travel and lodging, a full band, long distance, or longer sets may raise the quote. Card payments include a small processing fee, shown in full before you pay.',s:'Come back to this page, check the box, and continue to payment. Your receipt is emailed to you.',b:'Your booking is not complete until you submit the form and receive your receipt.'},
+church:{l:'https://square.link/u/NczpZSZT',t:'Church booking',f:'Church bookings are $150.',p:'Card payments include a small processing fee, shown in full before you pay.',s:'Come back to this page, check the box, and continue to payment. Your receipt is emailed to you.',b:'Your booking is not complete until you submit the form and receive your receipt.'},
+out:{l:'https://square.link/u/OKsRNsVG',t:'Outreach request',f:'Glo reviews every outreach request individually.',p:'After you submit the form, she will follow up with your next steps.',s:'Glo reviews your request and contacts you. If she confirms an amount, return here and use the payment step.',b:'Your request is not complete until you submit the form.'}};
+var PAY=document.getElementById('pay'),DONE=document.getElementById('done');DONE.onchange=function(){PAY.setAttribute('aria-disabled',DONE.checked?'false':'true')};
 var P=document.getElementById('panel'),C=document.querySelectorAll('.card');
 document.querySelectorAll('.pick').forEach(function(b){b.onclick=function(){var d=T[b.dataset.t];
-document.getElementById('pt').textContent=d.t;document.getElementById('pf').textContent=d.f;document.getElementById('pp').textContent=d.p;document.getElementById('s2').textContent=d.s;document.getElementById('pb').textContent=d.b;
+document.getElementById('pt').textContent=d.t;document.getElementById('pf').textContent=d.f;document.getElementById('pp').textContent=d.p;document.getElementById('s2').textContent=d.s;document.getElementById('pb').textContent=d.b;PAY.href=d.l;DONE.checked=false;PAY.setAttribute('aria-disabled','true');
 C.forEach(function(c){c.classList.remove('on')});b.closest('.card').classList.add('on');P.hidden=false;P.scrollIntoView({behavior:'smooth',block:'nearest'});P.focus({preventScroll:true})}});
 </script>
 <div class="note">Want to help fund outreach? <a href="contribute.html" style="text-decoration:underline">Make a contribution</a>.</div></div></section>
