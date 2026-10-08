@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Shop — Glo Israel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<nav><div class="wrap"><a class="brand" href="index.html"><img src="images/logo-gold.png" alt="Glo Israel"></a><div class="navlinks"><a href="index.html#bio">Bio</a><a href="index.html#music">Music</a><a href="booking.html" >Booking</a><a href="shop.html" class="on">Shop</a><a href="contribute.html" >Contribute</a></div></div></nav>
+<section><div class="wrap"><div class="head"><h2>Praise HIM! shirts</h2><p>Wear the Word. Every shirt supports the ministry.</p></div>
+<div class="shop"><img id="shirt" src="images/shirt-black.png" alt="Praise HIM! shirt, black with gold">
+<div><div class="price">$25 each</div><p id="cname">Black with gold</p>
+<div class="swatches" role="group" aria-label="Shirt color"><button class="sw on" data-c="black" data-n="Black with gold" style="background:#0B0B0C" aria-label="Black with gold"></button><button class="sw" data-c="purple" data-n="Purple with gold" style="background:#4B1FA0" aria-label="Purple with gold"></button><button class="sw" data-c="white" data-n="White with purple" style="background:#fff" aria-label="White with purple"></button></div>
+<label for="size">Size</label><br><select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select><!-- PLACEHOLDER: confirm sizes -->
+<p style="margin:20px 0;max-width:46ch">Pay $25 per shirt on Cash App. In the note, write your <b>color, size, and quantity</b> (and shipping address if it ships).</p>
+<a class="btn btn-gold" id="pay" href="https://cash.app/$GloIsraelMusic/25" target="_blank" rel="noopener">Pay on Cash App</a>
+<p style="margin-top:14px;font-size:.88rem;opacity:.7">Cash App: $GloIsraelMusic</p></div></div>
+<div style="margin-top:56px"><img src="images/group-praise-him.jpg" alt="Group wearing purple Praise HIM! shirts by the water" style="max-width:760px;margin:0 auto;border:1px solid var(--gold)"></div></div></section>
+<script>
+var s=document.getElementById('shirt'),n=document.getElementById('cname'),b=document.querySelectorAll('.sw');
+b.forEach(function(x){x.onclick=function(){b.forEach(function(y){y.classList.remove('on')});x.classList.add('on');s.src='images/shirt-'+x.dataset.c+'.png';s.alt='Praise HIM! shirt, '+x.dataset.n.toLowerCase();n.textContent=x.dataset.n}});
+</script>
+<footer><div class="wrap"><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
