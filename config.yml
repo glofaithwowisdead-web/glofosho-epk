@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: images/uploads
+public_folder: /images/uploads
+collections:
+  - name: updates
+    label: Updates
+    label_singular: Update
+    folder: content/updates
+    create: true
+    extension: json
+    format: json
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} ({{category}})"
+    sort: "date:desc"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Type, name: category, widget: select, options: ["Show", "Appearance", "Interview", "Announcement"], default: "Announcement" }
+      - { label: Date posted, name: date, widget: datetime, date_format: "MMMM D, YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "When and where (optional)", name: when, widget: string, required: false, hint: "Example: Saturday, Dec 6 at 7 PM, Dallas, TX" }
+      - { label: Details, name: body, widget: text, required: false }
+      - { label: "Photo (optional)", name: image, widget: image, required: false }
+      - { label: "YouTube link (optional)", name: youtube_url, widget: string, required: false, hint: "Paste a YouTube video or Shorts link" }
+      - { label: "Audio clip (optional)", name: audio, widget: file, required: false, hint: "MP3 only. Keep it under 10 MB." }
+      - { label: "Button link (optional)", name: link_url, widget: string, required: false }
+      - { label: "Button text (optional)", name: link_text, widget: string, required: false, hint: "Example: Get tickets" }
