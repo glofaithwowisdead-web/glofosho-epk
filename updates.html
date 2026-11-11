@@ -1,26 +1,31 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Updates — Glo Israel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><style>.post .when{font-weight:500}.post .date{font-size:.85rem;opacity:.65}.post img.pic{width:100%;border:1px solid var(--gold)}.post .video{max-width:100%;margin:0}.post audio{width:100%}.post p{margin:0}</style></head><body>
+<!DOCTYPE html><html lang="en"><head><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5RPHSQC5');</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Updates — Glo Israel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><style>.post .date{font-size:.85rem;opacity:.65}.post .wp p{margin:0 0 12px}.post .wp a{text-decoration:underline}.post .wp img{height:auto;border:1px solid var(--gold)}.post .wp iframe{width:100%;aspect-ratio:16/9;height:auto;border:1px solid var(--gold)}.post .wp figure{margin:0 0 12px}.post .wp audio,.post .wp video{width:100%}</style><!-- TikTok Pixel Code Start --><script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('DBQCJ4JC77UBQ4PDUU9G');
+  ttq.page();
+}(window, document, 'ttq');
+</script><!-- TikTok Pixel Code End --></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RPHSQC5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav><div class="wrap"><a class="brand" href="index.html"><img src="images/logo-gold.png" alt="Glo Israel"></a><div class="navlinks"><a href="index.html#bio">Bio</a><a href="index.html#music">Music</a><a href="booking.html" >Booking</a><a href="updates.html" class="on">Updates</a><a href="contribute.html" >Contribute</a></div></div></nav>
 <section><div class="wrap"><div class="head"><h2>Updates</h2><p>Shows, appearances, interviews, and news from Glo Israel.</p></div>
 <div id="feed" style="display:grid;gap:24px;max-width:760px"><div class="note" style="margin:0">Loading updates...</div></div>
 <div class="note">Want these in your inbox? <a href="https://buttondown.com/gloisraelmusic" target="_blank" rel="noopener" style="text-decoration:underline">Join the newsletter</a>.</div></div></section>
 <script>
-(function(){var F=document.getElementById('feed');
+(function(){
+var WP_SITE='gloisrael.wordpress.com'; /* EDIT: the WordPress.com blog address */
+var F=document.getElementById('feed');
 function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function safe(u){return /^https?:\/\//i.test(u||'')?u:''}
-function src(u){u=u||'';return(/^\/(?!\/)/.test(u)||/^https?:\/\//i.test(u))?u:''}
-function yt(u){var m=(u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/);return m?m[1]:''}
-function fmt(d){var x=new Date(String(d).slice(0,10)+'T12:00:00');return isNaN(x)?'':x.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}
-function body(t){return esc(t).split(/\n{2,}/).map(function(p){return'<p>'+p.replace(/\n/g,'<br>').replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener" style="text-decoration:underline">$1</a>')+'</p>'}).join('')}
-fetch('updates.json').then(function(r){return r.ok?r.json():[]}).catch(function(){return[]}).then(function(L){
+function txt(h){return new DOMParser().parseFromString(h||'','text/html').body.textContent}
+function fmt(d){var x=new Date(d);return isNaN(x)?'':x.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}
+function clean(h){var d=new DOMParser().parseFromString(h||'','text/html');
+d.querySelectorAll('script,style,link,object,embed,form,input,button,base,meta').forEach(function(n){n.remove()});
+d.querySelectorAll('iframe').forEach(function(n){if(!/^https:\/\/(www\.youtube(-nocookie)?\.com|open\.spotify\.com|player\.vimeo\.com)\//.test(n.getAttribute('src')||''))n.remove()});
+d.querySelectorAll('*').forEach(function(n){Array.from(n.attributes).forEach(function(a){var v=a.value.trim().toLowerCase();if(/^on/i.test(a.name)||((a.name==='href'||a.name==='src')&&/^(javascript|data):/.test(v)))n.removeAttribute(a.name)});if(n.tagName==='A'){n.target='_blank';n.rel='noopener'}});
+return d.body.innerHTML}
+fetch('https://public-api.wordpress.com/rest/v1.1/sites/'+WP_SITE+'/posts/?number=20&fields=ID,title,date,content,categories').then(function(r){return r.json()}).then(function(j){return j.posts||[]}).catch(function(){return[]}).then(function(L){
 if(!L.length){F.innerHTML='<div class="note" style="margin:0">Nothing posted yet. Check back soon.</div>';return}
-F.innerHTML=L.map(function(p){var h='<article class="card post"><div class="tag">'+esc(p.category||'Announcement')+'</div><h3>'+esc(p.title)+'</h3>';
-if(p.when)h+='<div class="when">'+esc(p.when)+'</div>';
-if(p.date)h+='<div class="date">Posted '+fmt(p.date)+'</div>';
-var im=src(p.image);if(im)h+='<img class="pic" src="'+esc(im)+'" alt="'+esc(p.title)+'">';
-if(p.body)h+=body(p.body);
-var y=yt(p.youtube_url);if(y)h+='<div class="video"><iframe src="https://www.youtube.com/embed/'+y+'" title="Video" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>';
-var au=src(p.audio);if(au)h+='<audio controls preload="none" src="'+esc(au)+'"></audio>';
-var lk=safe(p.link_url);if(lk)h+='<a class="btn btn-gold" href="'+esc(lk)+'" target="_blank" rel="noopener">'+esc(p.link_text||'Learn more')+'</a>';
-return h+'</article>'}).join('')})})();
+F.innerHTML=L.map(function(p){var c=Object.keys(p.categories||{}).filter(function(k){return k!=='Uncategorized'})[0]||'Update';
+return'<article class="card post"><div class="tag">'+esc(c)+'</div><h3>'+esc(txt(p.title))+'</h3><div class="date">Posted '+esc(fmt(p.date))+'</div><div class="wp">'+clean(p.content)+'</div></article>'}).join('')})})();
 </script>
 <footer><div class="wrap"><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
