@@ -22,6 +22,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <script>
 var WP_SITE='gloisrael.wordpress.com';fetch('https://public-api.wordpress.com/rest/v1.1/sites/'+WP_SITE+'/posts/?number=1&fields=title').then(function(r){return r.json()}).then(function(j){var p=j&&j.posts&&j.posts[0];if(p&&p.title){document.getElementById('lb').textContent='Latest';document.getElementById('lt').textContent=new DOMParser().parseFromString(p.title,'text/html').body.textContent}}).catch(function(){});
 </script>
+<section class="dark" id="mission"><div class="wrap"><div class="head"><h2>Our mission</h2><p>Music with a purpose beyond the stage.</p></div>
+<p style="max-width:62ch;margin-bottom:28px">Glo partners with organizations that serve people in need, including homeless shelters, rehabilitation centers, people facing medical challenges, and children without parents. Together, we host events, raise funds, and perform. The proceeds go to the partner organization, and through every partnership, Glo shares the Gospel of Jesus Christ. Glo is working toward becoming a nonprofit organization to carry this mission further.</p>
+<a class="btn btn-gold" href="partner.html">Partner with Glo</a></div></section>
 <section class="sand" id="intro"><div class="wrap"><div class="head"><h2>Welcome</h2><p>Press play to hear Glo's heart for the music.</p></div>
 <!-- Click-to-play so sound works on phones. Replace 9zcnDP0h-d4 with the YouTube ID. -->
 <div class="video"><iframe src="https://www.youtube.com/embed/9zcnDP0h-d4" title="Glo Israel intro" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
@@ -64,4 +67,4 @@ if(!seen()){setTimeout(function(){pop.classList.add('show')},6000)}
 document.getElementById('popx').onclick=function(){pop.classList.remove('show');mark()};
 pop.querySelector('form').addEventListener('submit',function(){mark();setTimeout(function(){pop.classList.remove('show')},300)});})();
 </script>
-<footer><div class="wrap"><span class="s" style="margin-bottom:6px">Let the Word Play</span><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
+<footer><div class="wrap"><span class="s" style="margin-bottom:6px">Let the Word Play</span><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">Glo Israel is working toward becoming a nonprofit organization.</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
