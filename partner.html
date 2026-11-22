@@ -16,13 +16,29 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <div class="note">Contributions made on the <a href="contribute.html" style="text-decoration:underline">Contribute page</a> support Glo's ministry. A portion of the proceeds raised at partnered events goes to the partner organization.</div>
 <div class="note">Glofro LLC is not a registered nonprofit. Contributions are not tax-deductible.</div></div></section>
 <section class="sand" id="request"><div class="wrap"><div class="head"><h2>Start a partnership</h2><p>Tell us about your organization and what you have in mind. Glo will follow up by email.</p></div>
-<form class="pform" name="partnership" method="POST" action="/partnership-received" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="partnership"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+<form class="pform" name="partnership"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
 <div><label for="org">Organization name</label><input id="org" name="organization" required></div>
 <div><label for="type">Type of organization</label><select id="type" name="org_type"><option>Homeless shelter</option><option>Women's shelter or program</option><option>Youth program or youth choir</option><option>Troubled youth program</option><option>Rehabilitation center</option><option>Medical or health support</option><option>Children and family services</option><option>Church or ministry</option><option>Other</option></select></div>
 <div class="two"><div><label for="nm">Your name</label><input id="nm" name="name" required></div><div><label for="em">Email</label><input id="em" name="email" type="email" required></div></div>
 <div class="two"><div><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel"></div><div><label for="loc">City and state</label><input id="loc" name="location"></div></div>
 <div><label for="kind">What are you hoping to do?</label><select id="kind" name="partnership_type"><option>Fundraiser</option><option>Performance at our event</option><option>Outreach event</option><option>Something else</option></select></div>
-<div><label for="dt">Event date, if you have one (optional)</label><input id="dt" name="event_date"></div>
+<div><label for="dt">Event date, if you have one (optional)</label><input id="dt" name="event_date" type="date"></div>
 <div><label for="msg">Tell us about your organization and your idea</label><textarea id="msg" name="message" required></textarea></div>
 <div><button class="btn btn-gold" type="submit">Send partnership request</button></div></form></div></section>
+<script>
+(function(){var GURL='https://docs.google.com/forms/d/e/1FAIpQLScvipniTcrh6cdIy3aovTxzfxKqcm1rfsv8OJrK7KlS0aFb5A/formResponse';
+document.querySelector('form.pform').addEventListener('submit',function(e){e.preventDefault();var f=this;if(f.elements['bot-field'].value){return}
+var btn=f.querySelector('button[type=submit]'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
+var v=function(id){return document.getElementById(id).value};
+var vals={'entry.1818012013':v('org'),'entry.799846480':v('type'),'entry.599806309':v('nm'),'entry.1213011541':v('em'),'entry.181547080':v('ph'),'entry.2041737850':v('loc'),'entry.1862842185':v('kind'),'entry.1184377210':v('msg'),'fvv':'1','pageHistory':'0'};
+var d=v('dt').split('-');if(d.length===3){vals['entry.845764982_year']=d[0];vals['entry.845764982_month']=String(parseInt(d[1],10));vals['entry.845764982_day']=String(parseInt(d[2],10))}
+var ifr=document.createElement('iframe');ifr.name='gsend';ifr.style.display='none';document.body.appendChild(ifr);
+var hf=document.createElement('form');hf.method='POST';hf.target='gsend';hf.action=GURL;hf.style.display='none';
+Object.keys(vals).forEach(function(k){var i=document.createElement('input');i.type='hidden';i.name=k;i.value=vals[k];hf.appendChild(i)});
+document.body.appendChild(hf);
+var gone=false,go=function(){if(gone)return;gone=true;window.location.href='/partnership-received'};
+ifr.addEventListener('load',function(){setTimeout(go,300)});
+setTimeout(go,5000);
+hf.submit()})})();
+</script>
 <footer><div class="wrap"><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">Glo Israel is working toward becoming a nonprofit organization.</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
