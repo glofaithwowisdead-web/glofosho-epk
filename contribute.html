@@ -32,7 +32,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 <style>.gform{display:grid;gap:16px}.gform label{display:block;font-size:.9rem;margin-bottom:6px}.gform input,.gform select,.gform textarea{width:100%;padding:12px;font:inherit;border:1px solid var(--ink);background:var(--ivory);color:var(--ink);border-radius:2px}.gform textarea{min-height:90px;resize:vertical}.gform .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.gform .two{grid-template-columns:1fr}}.gform [hidden]{display:none}</style>
 <div style="margin-top:72px;max-width:680px"><h3 style="font-size:1.8rem;margin-bottom:6px">Order your item</h3><p style="opacity:.8;margin-bottom:20px">Fill this out first. On the next page you'll send your payment on Cash App.</p>
-<form class="gform" name="gift" method="POST" action="/gift-requested" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="gift"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+<form class="gform" name="gift"><p hidden><label>Leave this empty: <input name="bot-field"></label></p>
 <div><label for="g">Choose your item</label><select id="g" name="gift"><option data-k="praise" value="Praise HIM! Psalms 150 Tee">Praise HIM! Psalms 150 Tee ($26.99)</option><option data-k="word" value="Let the Word Play Tee">Let the Word Play Tee ($30)</option><option data-k="hoodie" value="Let the Word Play Hoodie">Let the Word Play Hoodie ($49.99)</option></select></div>
 <div id="ship" style="display:grid;gap:16px"><div class="two"><div><label for="sz">Size</label><select id="sz" name="size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option></select></div><div><label for="q">Quantity</label><input id="q" name="quantity" type="number" min="1" max="10" value="1"></div></div>
 <div id="addr" style="display:grid;gap:16px"><div><label for="st">Shipping address</label><input id="st" name="street" autocomplete="street-address" required></div><div class="two"><div><label for="ct">City</label><input id="ct" name="city" required></div><div><label for="sa">State</label><input id="sa" name="state" required></div></div><div><label for="zp">ZIP code</label><input id="zp" name="zip" required></div></div></div>
@@ -50,7 +50,25 @@ function upd(){var k=key(),none=k==='none',n=Math.max(1,parseInt(q.value,10)||1)
 ship.hidden=none;ship.querySelectorAll('#addr input').forEach(function(i){i.required=!none});
 a.min=min;if(!touched||(parseFloat(a.value)||0)<min){a.value=min.toFixed(2)}}
 g.onchange=function(){touched=false;upd()};q.oninput=function(){touched=false;upd()};a.oninput=function(){touched=true};a.onblur=function(){upd()};
-document.querySelector('form.gform').addEventListener('submit',function(){upd();try{localStorage.setItem('gloGift',JSON.stringify({amt:a.value,gift:g.value,qty:key()==='none'?'':q.value}))}catch(e){}});
+document.querySelector('form.gform').addEventListener('submit',function(e){e.preventDefault();var f=this;if(f.elements['bot-field'].value){return}upd();
+try{localStorage.setItem('gloGift',JSON.stringify({amt:a.value,gift:g.value,qty:key()==='none'?'':q.value}))}catch(x){}
+var btn=f.querySelector('button[type=submit]'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
+var v=function(id){return document.getElementById(id).value};
+var body=new URLSearchParams();
+body.append('entry.2094740606',g.options[g.selectedIndex].text);
+body.append('entry.1212348438',v('sz'));
+body.append('entry.851783804',v('q'));
+body.append('entry.1337725290',v('st'));
+body.append('entry.1587231106',v('ct'));
+body.append('entry.2105954213',v('sa'));
+body.append('entry.232209647',v('zp'));
+body.append('entry.1884265043',v('nm'));
+body.append('entry.1596883111',v('em'));
+body.append('entry.671802547',v('amt'));
+body.append('entry.513669972',v('nt'));
+fetch('https://docs.google.com/forms/d/e/1FAIpQLSeW2_ZvWU9GWqrT-cEMejOs5B-XhD48g3uIhCsaqK9fMYYoDw/formResponse',{method:'POST',mode:'no-cors',body:body})
+.then(function(){window.location.href='/gift-requested'})
+.catch(function(){btn.disabled=false;btn.textContent=label;alert('Sorry, your order did not send. Please try again, or email glofaithwowisdead@gmail.com.')});});
 upd()})();
 </script>
 <footer><div class="wrap"><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">Glo Israel is working toward becoming a nonprofit organization.</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
