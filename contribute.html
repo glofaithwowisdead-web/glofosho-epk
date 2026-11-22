@@ -54,21 +54,15 @@ document.querySelector('form.gform').addEventListener('submit',function(e){e.pre
 try{localStorage.setItem('gloGift',JSON.stringify({amt:a.value,gift:g.value,qty:key()==='none'?'':q.value}))}catch(x){}
 var btn=f.querySelector('button[type=submit]'),label=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
 var v=function(id){return document.getElementById(id).value};
-var body=new URLSearchParams();
-body.append('entry.2094740606',g.options[g.selectedIndex].text);
-body.append('entry.1212348438',v('sz'));
-body.append('entry.851783804',v('q'));
-body.append('entry.1337725290',v('st'));
-body.append('entry.1587231106',v('ct'));
-body.append('entry.2105954213',v('sa'));
-body.append('entry.232209647',v('zp'));
-body.append('entry.1884265043',v('nm'));
-body.append('entry.1596883111',v('em'));
-body.append('entry.671802547',v('amt'));
-body.append('entry.513669972',v('nt'));
-fetch('https://docs.google.com/forms/d/e/1FAIpQLSeW2_ZvWU9GWqrT-cEMejOs5B-XhD48g3uIhCsaqK9fMYYoDw/formResponse',{method:'POST',mode:'no-cors',body:body})
-.then(function(){window.location.href='/gift-requested'})
-.catch(function(){btn.disabled=false;btn.textContent=label;alert('Sorry, your order did not send. Please try again, or email glofaithwowisdead@gmail.com.')});});
+var vals={'entry.2094740606':g.options[g.selectedIndex].text,'entry.1212348438':v('sz'),'entry.851783804':v('q'),'entry.1337725290':v('st'),'entry.1587231106':v('ct'),'entry.2105954213':v('sa'),'entry.232209647':v('zp'),'entry.1884265043':v('nm'),'entry.1596883111':v('em'),'entry.671802547':v('amt'),'entry.513669972':v('nt'),'fvv':'1','pageHistory':'0'};
+var ifr=document.createElement('iframe');ifr.name='gsend';ifr.style.display='none';document.body.appendChild(ifr);
+var hf=document.createElement('form');hf.method='POST';hf.target='gsend';hf.action='https://docs.google.com/forms/d/e/1FAIpQLSeW2_ZvWU9GWqrT-cEMejOs5B-XhD48g3uIhCsaqK9fMYYoDw/formResponse';hf.style.display='none';
+Object.keys(vals).forEach(function(k){var i=document.createElement('input');i.type='hidden';i.name=k;i.value=vals[k];hf.appendChild(i)});
+document.body.appendChild(hf);
+var gone=false,go=function(){if(gone)return;gone=true;window.location.href='/gift-requested'};
+ifr.addEventListener('load',function(){setTimeout(go,300)});
+setTimeout(go,5000);
+hf.submit();});
 upd()})();
 </script>
 <footer><div class="wrap"><span class="s">God&#39;s Word. God&#39;s music. God&#39;s glory.</span><div>@glofaithwowisdead</div><div class="fine">Glo Israel is working toward becoming a nonprofit organization.</div><div class="fine">&copy; 2026 Glo Israel / Glofro LLC. All rights reserved.</div></div></footer></body></html>
